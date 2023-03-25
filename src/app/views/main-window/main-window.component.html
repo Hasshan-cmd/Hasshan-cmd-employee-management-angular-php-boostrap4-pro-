@@ -1,0 +1,56 @@
+<div (window:resize)="setSidenavSettings()" id="main-window-wrapper" >
+  <mat-toolbar-row color="primary">
+    <button mat-icon-button (click)="sidenavOpen=!sidenavOpen">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/logo.jpg" class="logo">
+    <span class="spacer"></span>
+    <button mat-mini-fab color="primary">
+      <mat-icon [matBadgeHidden]="unreadNotificationCount == '0'" [matBadge]="unreadNotificationCount" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="test">
+      <div (click)="$event.stopPropagation();" class="notification-item" *ngFor="let notification of latestNotifications">
+        <div class="n-date">
+        </div>
+      </div>
+      <div *ngIf="latestNotifications.length!=0" mat-menu-item class="text-center">
+        <button routerLink="/users/my-all-notifications" mat-flat-button color="primary" class="btn-block m-0">See All</button>
+      </div>
+      <div *ngIf="latestNotifications.length==0" class="text-center px-3 pt-3 pb-1">
+        <i>No notifications to show</i>
+      </div>
+    </mat-menu>
+
+
+    <button mat-mini-fab color="primary" [matMenuTriggerFor]="settings">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #settings="matMenu">
+      <button routerLink="/users/change-my-password" mat-menu-item><mat-icon>vpn_key</mat-icon> Change My Password</button>
+      <button routerLink="/users/change-my-photo" mat-menu-item><mat-icon>photo</mat-icon> Change My Photo</button>
+      <button *ngIf="latestNotifications.length != 0" routerLink="users/my-all-notifications" mat-menu-item><mat-icon>notifications</mat-icon> My Notifications</button>
+    </mat-menu>
+  </mat-toolbar-row>
+
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="sidenavOpen">
+      <div class="user-box">
+          <mat-icon>logout</mat-icon>
+          <span class="d-inline-block ml-1">Sign Out</span>
+      </div>
+      <div style="padding-left:10px;padding-right: 10px; margin-bottom: 10px;">
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="py-2 px-3">
+        <router-outlet *ngIf="this.usecasesLoaded"></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <footer class="container-fluid d-flex">
+    <div class="d-inline-block">Copyright &copy; 2022 VL Industries. All rights reserved.</div>
+    <span class="spacer"></span>
+    <div class="d-inline-block">Version 1.0.0</div>
+  </footer>
+</div>

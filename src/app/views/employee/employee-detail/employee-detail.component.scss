@@ -1,0 +1,28 @@
+header {
+  background-color: lightslategrey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: default;
+  margin-bottom: 10px;
+
+
+  h1,ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  ol {
+    margin-top: 6px;
+  }
+}
+.form-field {
+  width: 100%;
+  /*color: white;*/
+}
+
+.custom-data-table{
+
+  th, td{
+    padding: 10px;
+  }
+}

@@ -1,0 +1,35 @@
+<!--
+<a routerLink="">Home</a>&nbsp;&nbsp;
+<a routerLink="/employees/add">Employee Form</a>&nbsp;&nbsp;
+<a routerLink="/employees">Employee Table</a>
+<br>
+<br>
+<br>
+<h1>Home Page</h1>
+<router-outlet></router-outlet>
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+  </head>
+  <body>
+    <nav><h1>VL INDUSTRIES EMPLOYEE MANAGEMENT SYSTEM</h1></nav>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-lg-2">
+          <br><br><br><br><br>
+          <button routerLink="/employees" class="mat-btn-sm" mat-stroked-button><mat-icon>people</mat-icon> All Employees</button>
+          <br><br>
+          <button routerLink="/employees/add" class="mat-btn-sm" mat-stroked-button><mat-icon>person_add</mat-icon> Add Employee</button>
+        </aside>
+        <section class="col-lg-10">
+          <router-outlet></router-outlet>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

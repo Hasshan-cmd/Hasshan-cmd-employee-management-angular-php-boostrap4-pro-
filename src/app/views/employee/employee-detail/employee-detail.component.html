@@ -1,0 +1,67 @@
+<header class="row">
+  <div class="col-lg-6"><h1>Employee Update Form</h1></div>
+  <div class="col-lg-6 text-right">
+    <ol class="breadcrumb float-right bg-transparent">
+      <li class="breadcrumb-item">Employee</li>
+      <li class="breadcrumb-item active" aria-current="page">Employee Details</li>
+    </ol>
+  </div>
+</header>
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <table class="w-100 table-striped custom-data-table">
+      <tbody>
+      <tr>
+        <th>Id</th>
+        <td>{{employees[0]?.id}}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{employees[0]?.name}}</td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td>{{employees[0]?.age}}</td>
+      </tr>
+      <tr>
+        <th>NIC Number</th>
+        <td>{{employees[0]?.nic}}</td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>{{employees[0]?.gender?.name}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<!--<div class="table-responsive">
+  <table mat-table [dataSource]="employees" class="w-100">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-row *matCellDef="let employee">{{employee.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>NAME</th>
+      <td mat-row *matCellDef="let employee">{{employee.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>AGE</th>
+      <td mat-row *matCellDef="let employee">{{employee.age}}</td>
+    </ng-container>
+    <ng-container matColumnDef="nic">
+      <th mat-header-cell *matHeaderCellDef>NIC</th>
+      <td mat-row *matCellDef="let employee">{{employee.nic}}</td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef>GENDER</th>
+      <td mat-row *matCellDef="let employee">{{employee.gender ? employee.gender.name : 'N/A'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>-->
+
